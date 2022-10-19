@@ -1,7 +1,9 @@
-<app-header></app-header>
+<app-header (onMenuChange)="changeMenu($event)"></app-header>
 <div class="container">
   <div class="row">
-    <app-recipes></app-recipes>
-    <app-shopping-list></app-shopping-list>
+    <app-recipes *ngIf="activeWindow === 'recipes'"></app-recipes>
+    <app-shopping-list
+      *ngIf="activeWindow === 'shopping-list'"
+    ></app-shopping-list>
   </div>
 </div>

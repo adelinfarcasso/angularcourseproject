@@ -1,1 +1,17 @@
-<p>recipe.item works!</p>
+<a href="" class="list-group-item clearfix" (click)="fireItemSelection($event)">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{ recipeElem.name }}</h4>
+    <p class="list-group-item-text">{{ recipeElem.description }}</p>
+  </div>
+  <div class="pull-right">
+    <!-- {{}} vizeaza direct atributul 'src' - similar template literal -->
+    <!-- [] vizeaza proprietatea din Obj. elementului HTML -->
+    <img
+      src="{{ recipeElem.imagePath }}"
+      [src]="recipeElem.imagePath"
+      class="img-responsive"
+      style="max-height: 50px"
+      alt=""
+    />
+  </div>
+</a>
