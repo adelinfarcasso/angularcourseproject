@@ -12,8 +12,12 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-12 d-flex gap-2">
-          <button class="btn btn-success" (click)="onInputAdd()" type="submit">
+        <div class="col-xs-12 btn-group">
+          <button
+            class="btn btn-success"
+            (click)="onInputAdd(nameInput, amountInput)"
+            type="submit"
+          >
             Add
           </button>
           <button class="btn btn-danger" type="button">Delete</button>

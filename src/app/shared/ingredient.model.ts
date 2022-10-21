@@ -1,12 +1,13 @@
 export class Ingredient {
-  //   public name: string;
-  //   public amount: number;
-  //   constructor(name: string, amount: number) {
-  //     this.name = name;
-  //     this.amount = amount;
-  //   }
+  public name: string;
+  public amount: string;
 
-  constructor(public name: string, public amount: string) {
-    // automatically assigning var names as above
+  constructor(name: string, amount: string) {
+    this.name = name;
+    this.amount = amount;
   }
+
+  //   constructor(public name: string, public amount: string) {
+  //     // automatically assigning var names as above
+  //   }
 }

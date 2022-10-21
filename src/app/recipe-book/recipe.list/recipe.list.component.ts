@@ -1,5 +1,6 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../recipe.model';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -7,37 +8,15 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipe.list.component.css'],
 })
 export class RecipeListComponent implements OnInit {
-  recipes: Recipe[] = [
-    new Recipe(
-      'Burger 1',
-      'Tasty burger',
-      'https://assets.bonappetit.com/photos/5b919cb83d923e31d08fed17/1:1/w_2560%2Cc_limit/basically-burger-1.jpg'
-    ),
-    new Recipe(
-      'Burger 2',
-      'Tasty burger',
-      'https://assets.bonappetit.com/photos/5b919cb83d923e31d08fed17/1:1/w_2560%2Cc_limit/basically-burger-1.jpg'
-    ),
-    new Recipe(
-      'Burger 3',
-      'Tasty burger',
-      'https://assets.bonappetit.com/photos/5b919cb83d923e31d08fed17/1:1/w_2560%2Cc_limit/basically-burger-1.jpg'
-    ),
-  ];
-  getDetails(event: any): void {
-    console.log(event);
-  }
-
-  selectedRecipe: Recipe;
-  @Output() recipeSelectedForDetails = new EventEmitter();
+  recipes: Recipe[];
+  constructor(private recipeService: RecipeService) {}
 
   showSelectedItem(e: any, recipe: Recipe): void {
     e.preventDefault();
-    this.selectedRecipe = recipe;
-    this.recipeSelectedForDetails.emit(recipe);
+    //  this.recipeService.selectedRecipe = recipe;
   }
 
-  constructor() {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.recipes = this.recipeService.getRecipes();
+  }
 }
