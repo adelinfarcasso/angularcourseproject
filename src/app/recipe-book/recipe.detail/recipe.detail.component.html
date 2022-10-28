@@ -1,11 +1,9 @@
-<div class="row">
+<div  class="row">
   <div class="col-xs-12">
-    <!--  -->
-
     <img
       alt=""
       src="{{ recipeToDisplay.imagePath }}"
-      style="max-height: 50px"
+      style="max-height: 250px"
       class="img-responsive"
     />
   </div>
@@ -15,7 +13,6 @@
     <h1>{{ recipeToDisplay.name }}</h1>
   </div>
 </div>
-
 <div class="row">
   <div class="col-xs-12">
     <div appDropdown class="btn-group">
@@ -28,8 +25,8 @@
             >Add to Shopping List</a
           >
         </li>
-        <li><a href="#">Edit Recipe</a></li>
-        <li><a href="#">Delete Recipe</a></li>
+        <li><a [routerLink]="['edit']" style="cursor: pointer">Edit Recipe</a></li>
+        <li><a style="cursor: pointer">Delete Recipe</a></li>
       </ul>
     </div>
   </div>

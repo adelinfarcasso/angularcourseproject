@@ -1,6 +1,6 @@
 import { Recipe } from './recipe.model';
-import { EventEmitter } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
+import { Subject } from 'rxjs';
 
 export class RecipeService {
   private recipes: Recipe[] = [
@@ -35,10 +35,15 @@ export class RecipeService {
       ]
     ),
   ];
-  recipeSelected = new EventEmitter<Recipe>();
+  recipeSelected = new Subject<Recipe>();
 
   getRecipes() {
     return this.recipes.slice();
   }
+
   currentRecipe: Recipe;
+
+  getRecipe(id: number) {
+    return this.recipes[id];
+  }
 }

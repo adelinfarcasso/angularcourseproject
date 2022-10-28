@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +8,9 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 export class HeaderComponent implements OnInit {
   constructor() {}
 
-  @Output() onMenuChange = new EventEmitter();
-  fireMenuChange(e: any) {
-    this.onMenuChange.emit(e);
-  }
-
   ngOnInit(): void {}
 }
+
+//   @Output() onMenuChange = new EventEmitter();
+//   fireMenuChange(e: any) {
+//     this.onMenuChange.emit(e);
